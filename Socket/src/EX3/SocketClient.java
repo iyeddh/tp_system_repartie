@@ -33,7 +33,7 @@ public class SocketClient {
 		 ObjectOutputStream output = new ObjectOutputStream(socket.getOutputStream());
          ObjectInputStream input = new ObjectInputStream(socket.getInputStream());
 		// Envoi d'un message au serveur
-		// creation du voiture 
+		// creation du Personne 
          System.out.println("donner le nom");
          String nom = keyb.next();
          System.out.println("donner l'age ");

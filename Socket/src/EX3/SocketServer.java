@@ -9,9 +9,11 @@ import java.util.Scanner;
 import EX2.Voiture;
 
 public class SocketServer {
+	private static int CPT_IDENTIENT=0;
 	public static void main(String argv[]) {
         int port = 0;
         Scanner keyb = new Scanner(System.in);
+        
 
         // Demande à l'utilisateur de saisir le port d'écoute
         System.out.print("Port d'écoute : ");
@@ -38,16 +40,12 @@ public class SocketServer {
                     System.out.println("Personne reçue du client : " + PersonneRecu);
 
                     // Demande de carburant
-                    int ide = 0;
-                    System.out.print("Donner l'identifient à ajouter : ");
                     
-                    if (keyb.hasNextInt()) {
-                        ide = keyb.nextInt();
-                        PersonneRecu.setIdentifient(ide);
-                    } else {
-                        System.err.println("Entrée invalide, l'identifient doit être un entier.");
-                        keyb.next(); // Clear invalid input
-                    }
+                    
+                    
+                    	CPT_IDENTIENT++;
+                        PersonneRecu.setIdentifient(CPT_IDENTIENT);
+                    
 
                     // Affichage de l'adresse et du port du client
                     System.out.println("Ca vient de : " + socket.getInetAddress() + ":" + socket.getPort());
